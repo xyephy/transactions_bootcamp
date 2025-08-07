@@ -1,139 +1,180 @@
-# Bitcoin Transactions Bootcamp
+# Lightning Network Educational Bootcamp
 
-A hands-on educational program designed to teach Bitcoin fundamentals through interactive Python scripts and practical demonstrations using Polar Lightning Network.
+A comprehensive 2-day educational program designed to teach Lightning Network fundamentals through interactive Python scripts and practical demonstrations using Polar Lightning Network.
 
-## Overview
+## 🎯 Overview
 
-This bootcamp provides students with a comprehensive understanding of how Bitcoin works at the implementation level. Through six interactive modules, participants will explore Bitcoin's core mechanisms including transactions, blockchain structure, proof-of-work consensus, network architecture, mining economics, and modern development tools.
+This bootcamp provides students with hands-on experience of Lightning Network concepts through interactive demonstrations. Students will learn payment channels, HTLCs, routing, network topology, and Lightning economics through practical exercises with real Lightning nodes.
 
-## Prerequisites
+## 📚 Course Structure
 
-- **Polar Lightning Network** - Local Bitcoin development environment
-- **Python 3.7+** - Programming language for scripts
-- **Docker** - Required for Polar
-- Basic programming knowledge (helpful but not required)
+### **Day 1: Lightning Foundations** 
+- **Payment Channels** - Understanding bidirectional off-chain transactions
+- **HTLCs** - Hash Time-Locked Contracts and atomic payments
 
-## Course Structure
+### **Day 2: Network Operations**
+- **Routing & Pathfinding** - How payments navigate the network
+- **Network Topology** - Channel management and liquidity strategies  
+- **Lightning Economics** - Fee models, business cases, and incentives
 
-### Module 1: Transactions & UTXO Model (45 minutes)
-Learn how Bitcoin moves value through the Unspent Transaction Output (UTXO) model.
-- Understanding inputs, outputs, and transaction fees
-- Hands-on transaction building and analysis
-- Real Bitcoin transaction exploration
+## 🛠️ Prerequisites
 
-### Module 2: Blockchain Structure (45 minutes)
-Explore Bitcoin's tamper-proof distributed ledger.
-- Block anatomy and cryptographic linking
-- Immutability demonstrations
-- Blockchain validation mechanisms
+### Software Requirements
+- **Polar Lightning Network** - Local Lightning development environment
+- **Python 3.7+** with virtual environment
+- **Bitcoin Core** (included with Polar)
+- **LND Lightning Nodes** (included with Polar)
 
-### Module 3: Proof of Work & Mining (45 minutes)
-Experience Bitcoin's consensus mechanism through interactive mining simulations.
-- Mining competitions and difficulty adjustment
-- Hash rate and energy considerations
-- Real mining data analysis
+### Setup Instructions
+1. **Install Polar**: Download from [lightningpolar.com](https://lightningpolar.com)
+2. **Start Network**: Create a network with Alice, Bob, and Charlie nodes
+3. **Python Setup**:
+   ```bash
+   python3 -m venv bitcoin_class_env
+   source bitcoin_class_env/bin/activate
+   pip install requests
+   ```
 
-### Module 4: Network & Storage (30 minutes)
-Understand Bitcoin's peer-to-peer architecture and data management.
-- Transaction propagation simulation
-- Mempool monitoring
-- Data storage optimization
+## 🚀 Running the Bootcamp
 
-### Module 5: Mining Economics (45 minutes)
-Analyze Bitcoin's economic incentive system.
-- Halving events and supply schedule
-- Fee markets and transaction priority
-- Mining profitability calculations
-
-### Module 6: Modern Bitcoin Development (30 minutes)
-Introduction to contemporary Bitcoin development tools.
-- Bitcoin Development Kit (BDK)
-- Key and address generation
-- Transaction building with modern APIs
-
-## Getting Started
-
-### 1. Environment Setup
+### Option 1: Complete Bootcamp
 ```bash
-# Install Polar Lightning Network
-# Download from: https://lightningpolar.com
-
-# Create Python virtual environment
-python3 -m venv bitcoin_bootcamp_env
-source bitcoin_bootcamp_env/bin/activate
-pip install requests
+python run_lightning_class.py
 ```
 
-### 2. Network Configuration
-1. Launch Polar application
-2. Create new network with 1 Bitcoin Core node
-3. Start the network and mine 110+ blocks
-4. Verify connection with test script
-
-### 3. Running the Bootcamp
+### Option 2: Individual Topics
 ```bash
-# Test your setup
-python test_scripts.py
+# Day 1 - Foundations
+python lightning_scripts/1_payment_channels.py
+python lightning_scripts/2_htlcs.py
 
-# Run individual modules
-python scripts/1_transactions.py
-python scripts/2_blockchain.py
-python scripts/3_proof_of_work.py
-python scripts/4_network_and_storage.py
-python scripts/5_mining_and_incentives.py
-python scripts/bdk_bitcoin_demo.py
+# Day 2 - Network Operations  
+python lightning_scripts/3_routing_and_pathfinding.py
+python lightning_scripts/4_network_topology.py
+python lightning_scripts/5_lightning_economics.py
 ```
 
-## Key Features
-
-- **Real Bitcoin Network Interaction** - Uses actual Bitcoin Core via Polar's regtest environment
-- **Interactive Learning** - Hands-on exercises, competitions, and real-time demonstrations
-- **Progressive Complexity** - Builds understanding from basic concepts to advanced topics
-- **Practical Application** - Students build actual Bitcoin transactions and applications
-- **Modern Tools** - Introduction to professional Bitcoin development frameworks
-
-## Learning Outcomes
-
-Upon completion, students will be able to:
-- Explain the UTXO model and how it differs from traditional account systems
-- Analyze and construct Bitcoin transactions
-- Understand blockchain immutability and cryptographic security
-- Describe proof-of-work consensus and mining economics
-- Navigate Bitcoin's peer-to-peer network architecture
-- Use modern Bitcoin development tools and APIs
-
-## Technical Architecture
-
-The bootcamp leverages:
-- **Polar Lightning Network** for local Bitcoin Core node management
-- **Python scripts** for interactive demonstrations and exercises
-- **Bitcoin Core RPC API** for real blockchain interaction
-- **Bitcoin Development Kit (BDK)** for modern development practices
-
-## File Structure
-
-```
-transactions_bootcamp/
-├── README.md                    # This file
-├── test_scripts.py             # Pre-bootcamp environment testing
-├── scripts/                    # Educational modules
-│   ├── 1_transactions.py       # UTXO model and transaction mechanics
-│   ├── 2_blockchain.py         # Blockchain structure and security
-│   ├── 3_proof_of_work.py      # Mining and consensus mechanisms
-│   ├── 4_network_and_storage.py # P2P network and data management
-│   ├── 5_mining_and_incentives.py # Economic incentives and halving
-│   └── bdk_bitcoin_demo.py     # Modern Bitcoin development tools
-└── .gitignore                  # Version control exclusions
+### Option 3: Testing Mode
+```bash
+# Test all scripts before class
+python test_lightning_scripts.py
 ```
 
-## Contributing
+## ⚡ Key Learning Topics
 
-This is an educational project designed for Bitcoin fundamentals instruction. Contributions that enhance learning outcomes or fix technical issues are welcome.
+### **Payment Channels**
+- Channel opening, funding, and closing lifecycle
+- Off-chain transaction mechanics
+- Channel state management
+- Live Polar node integration
 
-## License
+### **HTLCs (Hash Time-Locked Contracts)**
+- HTLC creation and resolution
+- Multi-hop payment simulation  
+- Security properties and time locks
+- Hash preimage mechanisms
 
-This project is intended for educational use. Please respect Bitcoin's open-source ecosystem and the tools that make this education possible.
+### **Routing & Pathfinding**
+- Network topology analysis
+- Onion routing for privacy
+- Route optimization strategies
+- Routing failure handling
+
+### **Network Topology**
+- Network connectivity analysis
+- Channel lifecycle management
+- Liquidity rebalancing strategies
+- Network effects demonstration
+
+### **Lightning Economics**
+- Fee structure analysis
+- Liquidity market economics
+- ROI calculation tools
+- Economic security models
+
+## 🎓 Educational Features
+
+### Interactive Learning
+- **Real-time demonstrations** with live Lightning nodes
+- **Hands-on exercises** with immediate feedback
+- **Conceptual quizzes** to test understanding
+- **Practical calculators** for real-world scenarios
+
+### Instructor Support
+- **Non-interactive testing** for script validation
+- **Automated demonstrations** for reliable setup  
+- **Comprehensive error handling** for classroom use
+- **Detailed documentation** in `lightning_scripts/README.md`
+
+## 📊 Learning Outcomes
+
+After completing this bootcamp, students will understand:
+
+### Technical Concepts
+✅ How payment channels enable off-chain transactions  
+✅ HTLC mechanics and atomic payment guarantees  
+✅ Lightning routing and pathfinding algorithms  
+✅ Network topology and channel management  
+✅ Economic incentives and fee structures  
+
+### Practical Skills
+✅ Setting up and managing Lightning channels  
+✅ Understanding routing costs and optimization  
+✅ Analyzing network connectivity and liquidity  
+✅ Calculating Lightning business economics  
+✅ Designing Lightning Network applications  
+
+## 📁 Project Structure
+
+```
+lightning_bootcamp/
+├── README.md                           # This overview
+├── run_lightning_class.py             # Main bootcamp runner
+├── test_lightning_scripts.py          # Pre-class testing
+├── lightning_scripts/                 # Educational modules
+│   ├── README.md                      # Detailed instructor guide
+│   ├── 1_payment_channels.py         # Payment channels deep dive
+│   ├── 2_htlcs.py                     # Hash Time-Locked Contracts
+│   ├── 3_routing_and_pathfinding.py  # Routing algorithms
+│   ├── 4_network_topology.py         # Network structure
+│   └── 5_lightning_economics.py      # Economics and incentives
+└── bitcoin_class_env/                 # Python virtual environment
+```
+
+## 🧪 Testing Your Setup
+
+Before running the bootcamp:
+
+```bash
+# Test all Lightning scripts
+python test_lightning_scripts.py
+
+# Verify Polar connection
+python run_lightning_class.py
+```
+
+## 🎯 Target Audience
+
+- **Bitcoin educators** teaching Lightning Network concepts
+- **Developers** learning Lightning Network development
+- **Students** with basic Bitcoin knowledge
+- **Technical enthusiasts** exploring payment channel technology
+
+## 🚀 Next Steps
+
+After completing the bootcamp:
+- **Build Lightning Apps** using LND API or Lightning Development Kit
+- **Run Lightning Nodes** in production environments
+- **Contribute to Lightning** open source development
+- **Start Lightning Business** with routing node operations
+
+## 📚 Additional Resources
+
+- **Lightning Network White Paper**: [lightning.network](https://lightning.network)
+- **LND Documentation**: [docs.lightning.engineering](https://docs.lightning.engineering)  
+- **Lightning RFC**: [github.com/lightning/bolts](https://github.com/lightning/bolts)
+- **Polar Setup Guide**: [lightningpolar.com](https://lightningpolar.com)
 
 ---
 
-**Transform theoretical Bitcoin knowledge into practical understanding through hands-on experience.**
+**⚡ Ready to explore the future of Bitcoin payments? Let's get started! ⚡**

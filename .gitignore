@@ -1,13 +1,14 @@
-# Python virtual environment
+# Lightning Network Bootcamp .gitignore
+
+# Python Virtual Environment
 bitcoin_class_env/
 
-# Python cache
+# Python Cache Files
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
 
-# Distribution / packaging
+# Python Distribution / Packaging
 .Python
 build/
 develop-eggs/
@@ -25,62 +26,72 @@ wheels/
 .installed.cfg
 *.egg
 
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# Environment variables
+# Environment Variables
 .env
 .venv
 env/
 venv/
-ENV/
-env.bak/
-venv.bak/
 
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# IDE
+# IDE and Editor Files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Local development files
-quick_start_guide.md
-run_class.py
+# macOS Files
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# Test outputs
-test_output.txt
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux Files
+*~
+
+# Logs
 *.log
+logs/
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+
+# Local Configuration Files
+config.ini
+settings.local.py
+
+# Backup Files
+*.bak
+*.backup
