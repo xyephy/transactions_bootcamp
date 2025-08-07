@@ -51,20 +51,20 @@ class LightningEconomicsDemo:
         self.nodes = {
             "alice": {
                 "rpc_host": "localhost",
-                "rpc_port": "10001",
+                "rpc_port": "8081",
                 "name": "Alice",
                 "pubkey": None
             },
             "bob": {
                 "rpc_host": "localhost", 
-                "rpc_port": "10002",
+                "rpc_port": "8082",
                 "name": "Bob",
                 "pubkey": None
             },
-            "charlie": {
+            "carol": {
                 "rpc_host": "localhost",
-                "rpc_port": "10003",
-                "name": "Charlie", 
+                "rpc_port": "8083",
+                "name": "Carol", 
                 "pubkey": None
             }
         }

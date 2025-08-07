@@ -63,20 +63,20 @@ class LightningRoutingDemo:
         self.nodes = {
             "alice": {
                 "rpc_host": "localhost",
-                "rpc_port": "10001",
+                "rpc_port": "8081",
                 "name": "Alice",
                 "pubkey": None
             },
             "bob": {
                 "rpc_host": "localhost", 
-                "rpc_port": "10002",
+                "rpc_port": "8082",
                 "name": "Bob",
                 "pubkey": None
             },
-            "charlie": {
+            "carol": {
                 "rpc_host": "localhost",
-                "rpc_port": "10003",
-                "name": "Charlie", 
+                "rpc_port": "8083",
+                "name": "Carol", 
                 "pubkey": None
             }
         }
@@ -90,7 +90,7 @@ class LightningRoutingDemo:
         url = f"{base_url}{endpoint}"
         
         try:
-            macaroon_path = f"/Users/{os.getenv('USER')}/.polar/networks/1/volumes/lnd/{node}/data/chain/bitcoin/regtest/admin.macaroon"
+            macaroon_path = f"/Users/{os.getenv('USER')}/.polar/networks/17/volumes/lnd/{node}/data/chain/bitcoin/regtest/admin.macaroon"
             with open(macaroon_path, 'rb') as f:
                 macaroon = f.read().hex()
         except:

@@ -41,23 +41,23 @@ class LightningChannelDemo:
     
     def __init__(self):
         # Polar Lightning Node configurations
-        self.nodes = {
+                self.nodes = {
             "alice": {
                 "rpc_host": "localhost",
-                "rpc_port": "10001", 
+                "rpc_port": "8081",  # REST API port
                 "name": "Alice",
                 "pubkey": None
             },
             "bob": {
                 "rpc_host": "localhost", 
-                "rpc_port": "10002",
-                "name": "Bob", 
+                "rpc_port": "8082",  # REST API port
+                "name": "Bob",
                 "pubkey": None
             },
-            "charlie": {
+            "carol": {
                 "rpc_host": "localhost",
-                "rpc_port": "10003", 
-                "name": "Charlie",
+                "rpc_port": "8083",  # REST API port
+                "name": "Carol",
                 "pubkey": None
             }
         }
@@ -69,7 +69,8 @@ class LightningChannelDemo:
         
         # Read macaroon for authentication (Polar setup)
         try:
-            macaroon_path = f"/Users/{os.getenv('USER')}/.polar/networks/1/volumes/lnd/{node}/data/chain/bitcoin/regtest/admin.macaroon"
+            # Use the active network 17 that's currently running
+            macaroon_path = f"/Users/{os.getenv('USER')}/.polar/networks/17/volumes/lnd/{node}/data/chain/bitcoin/regtest/admin.macaroon"
             with open(macaroon_path, 'rb') as f:
                 macaroon = f.read().hex()
         except:
